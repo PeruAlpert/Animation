@@ -26,5 +26,3 @@ yarn ios
 
 ### Hacking Text
 
-
-## Congratulations! :tada:
