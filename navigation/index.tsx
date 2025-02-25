@@ -45,7 +45,6 @@ function BottomTabNavigator() {
       }}>
       <BottomTab.Screen name="Home" component={HomeScreen} />
       <BottomTab.Screen name="Info" component={InfoScreen} />
-      {/* Add more screens as needed */}
     </BottomTab.Navigator>
   );
 }

@@ -28,11 +28,11 @@ const AdsHomeList = ({
       offset: screenWidth * 0.9 * index,
       index,
     }),
-    [screenWidth], // Dependencies array includes screenWidth
+    [screenWidth], 
   );
 
   const scrollToNextIndex = useCallback(() => {
-    if (!images || images.length === 0) return; // Handle empty image array
+    if (!images || images.length === 0) return; 
 
     const nextIndex = (currentIndex + 1) % images.length;
     flatListRef.current?.scrollToIndex({index: nextIndex, animated: true});
@@ -46,9 +46,9 @@ const AdsHomeList = ({
     }
 
     return () => {
-      clearInterval(timerRef.current); // Clear the interval on unmount
+      clearInterval(timerRef.current); 
     };
-  }, [autoSlideInterval, scrollToNextIndex, images]); // Re-run if interval or images change
+  }, [autoSlideInterval, scrollToNextIndex, images]); 
 
   const onViewableItemsChanged = useRef(({viewableItems}) => {
     if (viewableItems.length > 0) {
@@ -125,11 +125,11 @@ const AdsHomeList = ({
 
 const styles = StyleSheet.create({
   container: {
-    position: 'relative', // Required for absolute positioning of pagination
+    position: 'relative', 
   },
   imageContainer: {
     width: screenWidth * 0.9,
-    height: 200, // Adjust height as needed
+    height: 200, 
     borderRadius: 20,
     overflow: 'hidden',
   },

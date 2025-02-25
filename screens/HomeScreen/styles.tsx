@@ -13,8 +13,7 @@ const styles = StyleSheet.create({
       hackerTextStyle: {
         fontSize: 24,
         fontWeight: 'bold',
-        color: '#00FF00', // Bright green for hacker text
-        // Add any other text styling you want here
+        color: '#00FF00',
       },
 });
 export default styles;
