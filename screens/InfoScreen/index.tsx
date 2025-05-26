@@ -1,13 +1,13 @@
-import { View, Text } from 'react-native'
-import React, { useEffect, useState } from 'react'
-import styles from './styles'
-import { GetAllPostsService } from '../../services/Posts/GetAllPosts'
-import PostsList from '../../components/Lists/PostsList'
+import {View, Text} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import styles from './styles';
+import {GetAllPostsService} from '../../services/Posts/GetAllPosts';
+import PostsList from '../../components/Lists/PostsList';
 
 const InfoScreen = () => {
-  const [loading, setLoading] = useState(false)
-  const [posts, setPosts] = useState([])
-  
+  const [loading, setLoading] = useState(false);
+  const [posts, setPosts] = useState([]);
+
   const handlePost = async () => {
     setLoading(true);
     await GetAllPostsService()
@@ -16,21 +16,21 @@ const InfoScreen = () => {
         setPosts(res);
       })
       .catch(error => {
-          console.log('error post', error);
+        console.log('error post', error);
       })
       .finally(() => {
         setLoading(false);
       });
   };
   useEffect(() => {
-    handlePost()
-  }, [])
-  
+    handlePost();
+  }, []);
+
   return (
     <View style={styles.container}>
-      <PostsList data={posts}/>
+      <PostsList data={posts} />
     </View>
-  )
-}
+  );
+};
 
-export default InfoScreen
+export default InfoScreen;

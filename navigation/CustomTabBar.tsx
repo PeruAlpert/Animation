@@ -53,13 +53,14 @@ const CustomTabBar: React.FC<BottomTabBarProps> = ({
                       isFocused &&
                       styles.iconContainerActive,
                   ]}>
-                
-                  <MonoText style={[styles.tabText, isFocused && styles.tabTextFocused]}>
+                  <MonoText
+                    style={[
+                      styles.tabText,
+                      isFocused && styles.tabTextFocused,
+                    ]}>
                     {label}
                   </MonoText>
-                
                 </View>
-               
               </View>
             </Animated.View>
           </TouchableOpacity>
@@ -69,15 +70,13 @@ const CustomTabBar: React.FC<BottomTabBarProps> = ({
   );
 };
 
-
-
 const styles = StyleSheet.create({
   tabBar: {
     flexDirection: 'row',
-    height: 59, 
+    height: 59,
     borderTopWidth: 1,
     borderTopColor: '#e0e0e0',
-    backgroundColor: colors.secondary,
+    backgroundColor: colors.white,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     paddingBottom: 10,
@@ -108,12 +107,12 @@ const styles = StyleSheet.create({
     borderRadius: 3,
     backgroundColor: 'black',
     position: 'absolute',
-    bottom: -10, 
+    bottom: -10,
   },
   tabText: {
     fontSize: 14,
     color: 'gray',
-    marginTop: 5, 
+    marginTop: 5,
   },
   tabTextFocused: {
     color: 'white',

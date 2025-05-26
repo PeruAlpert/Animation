@@ -6,11 +6,10 @@ import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {useEffect, useState} from 'react';
 import CustomTabBar from './CustomTabBar';
+import OnboardScreen from '../screens/Auth/OnboardScreen';
 const BottomTab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 export default function Navigation() {
-
-
   return (
     <NavigationContainer>
       <RootNavigator />
@@ -18,10 +17,14 @@ export default function Navigation() {
   );
 }
 
-
 function RootNavigator() {
   return (
     <Stack.Navigator>
+      <Stack.Screen
+        name="Onboard"
+        component={OnboardScreen}
+        options={{headerShown: false}}
+      />
       <Stack.Screen
         name="Root"
         component={BottomTabNavigator}
